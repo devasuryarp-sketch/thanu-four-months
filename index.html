@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff3f6">
+<title>For Thanu — Happy Four Months ♡</title>
+<style>
+:root{--rose:#b85f76;--deep:#7e394b;--pink:#f6dbe0;--cream:#fff8e9;--ink:#59453f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at top left,#fffdf6 0%,transparent 45%),linear-gradient(145deg,#fbf2df,#fff9ef 55%,#f7e9df);color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button{font:inherit}
+#petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.petal{position:absolute;top:-45px;opacity:.62;animation:fall linear infinite;color:#b85f76;filter:drop-shadow(0 2px 2px #8f5a5520)}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(420deg);opacity:.08}}
+main{position:relative;z-index:1;max-width:760px;margin:auto;padding:26px 18px 60px}
+.topline{text-align:center;font:600 11px/1.6 Arial,sans-serif;letter-spacing:.23em;text-transform:uppercase;color:#b56a83;margin:8px 0 24px}
+.hero{text-align:center;padding:18px 0 30px}
+.eyebrow{font:12px Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#b56a83}
+h1{font-size:clamp(2.2rem,8vw,4.3rem);font-weight:normal;line-height:1.02;margin:12px 0;color:var(--deep)}
+.subtitle{font-size:1.08rem;line-height:1.7;max-width:480px;margin:0 auto;color:#8a6c5d}
+.envelope-area{display:flex;flex-direction:column;align-items:center;margin:24px auto 18px}
+.envelope-button{border:0;background:transparent;cursor:pointer;padding:12px;max-width:100%;color:var(--deep)}
+.envelope{width:min(300px,78vw);height:190px;position:relative;filter:drop-shadow(0 14px 15px #b95c7b20);transition:transform .35s}
+.envelope-button:hover .envelope{transform:translateY(-4px) rotate(-1deg)}
+.env-back{position:absolute;inset:0;background:#d98a9a;border-radius:10px}
+.env-paper{position:absolute;left:10%;width:80%;height:78%;top:7%;background:#fffaf4;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;color:#a34d6b;transition:transform .9s ease;box-shadow:0 2px 5px #7e3b5015}
+.env-front{position:absolute;inset:0;background:#f1c8c8;clip-path:polygon(0 100%,0 0,50% 55%,100% 0,100% 100%);border-radius:0 0 10px 10px}
+.env-flap{position:absolute;inset:0;background:#cf7789;clip-path:polygon(0 0,100% 0,50% 59%);transform-origin:top;transition:transform .7s ease;z-index:3;border-radius:8px 8px 0 0}
+.seal{position:absolute;z-index:4;left:50%;top:52%;transform:translate(-50%,-50%);font-size:29px;transition:opacity .3s;background:#fff0e7;border:2px solid #b44d62;border-radius:50%;width:47px;height:47px;display:grid;place-items:center;box-shadow:0 2px 7px #7e394b35}
+.envelope-button.open .env-flap{transform:rotateX(180deg);z-index:0}
+.envelope-button.open .env-paper{transform:translateY(-92px);transition-delay:.35s}
+.envelope-button.open .seal{opacity:0}
+.tap-hint{font:13px Arial,sans-serif;color:#8d5a65;margin:10px 0 0}
+#letter{display:none;animation:letterIn .8s ease both}
+#letter.visible{display:block}
+@keyframes letterIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.letter-card{position:relative;background:rgba(255,250,235,.96);border:1px solid #e8d4b7;border-radius:5px;padding:clamp(22px,6vw,48px);box-shadow:0 14px 38px #7b4c3518;margin:30px 0 22px;background-image:repeating-linear-gradient(0deg,transparent,transparent 31px,#b78a6810 32px)}
+.letter-card:before{content:"🌸";position:absolute;right:18px;top:12px;font-size:25px;opacity:.9}
+.date{font:11px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#bd7a90}
+.salutation{font-size:1.5rem;color:var(--deep);margin:20px 0}
+.paragraph{font-size:1.06rem;line-height:1.95;white-space:pre-line;margin:0 0 20px}
+.reveal-p{opacity:0;transform:translateY(12px);transition:opacity .8s ease,transform .8s ease}
+.reveal-p.shown{opacity:1;transform:translateY(0)}
+.signature{font-size:1.3rem;line-height:1.7;color:var(--deep);margin-top:28px}
+.signature small{font-size:.95rem;color:#9d6a7b}
+.end-card{text-align:center;padding:26px 10px 10px}
+.end-card .big-heart{font-size:38px;display:inline-block;animation:heartbeat 1.8s ease-in-out infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}12%{transform:scale(1.12)}24%{transform:scale(1)}}
+.end-title{font-size:1.8rem;font-weight:normal;color:var(--deep);margin:10px 0}
+.end-note{line-height:1.8;max-width:450px;margin:0 auto 20px}
+.surprise-btn{border:1px solid #d6a5a0;background:#fff8ec;color:#843e4f;border-radius:999px;padding:13px 22px;cursor:pointer;min-height:46px;transition:transform .2s,background .2s}
+.surprise-btn:hover{transform:translateY(-2px);background:#ffe8ef}
+#finale{display:none;margin:20px auto 0;max-width:500px;background:#fff5e7;border:1px solid #e8c9b9;border-radius:12px;padding:24px 20px;line-height:1.8;animation:finalePop .8s cubic-bezier(.2,.9,.3,1.2) both;box-shadow:0 8px 28px #9d4d6818}
+#finale.visible{display:block}
+footer{text-align:center;font:11px Arial,sans-serif;letter-spacing:.08em;color:#9c7a70;margin:38px 0 0}\n@keyframes finalePop{from{opacity:0;transform:scale(.75) translateY(18px)}to{opacity:1;transform:scale(1) translateY(0)}}\n.final-burst{display:block;font-size:2rem;animation:heartbeat 1.5s ease-in-out infinite;margin-bottom:8px}\n.envelope-message{font-size:1rem;line-height:1.7;color:#7e394b;margin:3px auto 0;max-width:330px;text-align:center;font-style:italic}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="petals" aria-hidden="true"></div><div aria-hidden="true" style="position:fixed;left:12px;bottom:14px;font-size:24px;opacity:.58;z-index:0;pointer-events:none">🌷🦋</div><div aria-hidden="true" style="position:fixed;right:12px;top:14px;font-size:24px;opacity:.58;z-index:0;pointer-events:none">🌺🦋</div>
+<main>
+  <div class="topline">pressed flowers, tiny butterflies & one very big love ♡</div>
+  <header class="hero">
+    <div class="eyebrow">October 13 · our little milestone 🌷</div>
+    <h1>Four months<br>with you. 🌸</h1>
+    <p class="subtitle">A little vintage-paper love letter, with lilies and butterflies, for my favourite girl. Because four months of loving you still isn't enough for all the things I want to say. ♡</p>
+  </header>
+
+  <section class="envelope-area" aria-label="Open your letter">
+    <button class="envelope-button" id="openLetter" aria-expanded="false" aria-controls="letter">
+      <div class="envelope" aria-hidden="true">
+        <div class="env-back"></div>
+        <div class="env-paper">Ma wifeyyuhh, 😭💋</div>
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+        <div class="seal">♥</div>
+      </div>
+      <div class="tap-hint">tap the heart-sealed envelope to open your letter ♡</div><p class="envelope-message">Oi thakudu😭🛐😋,got something for uh bae😋💋</p>
+    </button>
+  </section>
+
+  <section id="letter" aria-live="polite">
+    <article class="letter-card">
+      <div class="date">four months of us · 13.10.2026</div>
+      <h2 class="salutation">Ma wifeyyuhh, 😭💋</h2>
+
+      <!-- Replace these paragraphs with your own anniversary letter. -->
+      <p class="paragraph reveal-p">Happy four months, ma THAKDU punaaraa wifeyuhhh 😭🛐😼🤭. Shoooo I still can't believe babyyy 😭🛐. 4 months 😭🛐. 122 days😭🤭💋. I still can't believe I get u call this cutie ma girlfriend, bestfriend and ofcourse my wifeyuhh 😭🤭💋✨. Four months might sound like a small amount of time bae. But for me those 122 days we everything 😭🤭. Those little moment's, silly conversations, cute fights, naughtiness,laughing at jokes till we can't breathe🤣😭🙏and many more memories that mean soo much to me more than my words even could explain. Spending it with ma wifey made it even more special 😭🛐💟. Me genuinely soo in lovee with ma wifey gang 😭🙃. She da goat herself 😭🤭.</p>
+
+      <p class="paragraph reveal-p">Shooo one of the favourite things Abt us is that we can get completely goofy and laughing at most simple stuff ever. And ofc being with u has made ma every day special yawr 😭💗. From June 13th to October 13th. There hasn't been a single day where I haven't thought About us 🛐😭🤭. Shooo i still remember 4 months back this dayy we were sharing pics. Laughing at naughtiness, then ofc being sleepless 😭🙈✨. Shooo from that dayyy 😭 parayandallo le 😭🙈🤭. You have your own simple ways of making ma days fell brighter, and I am sooososos grateful that I get to know ma thakdu more and more😭💕🎀. Shooooo we really did understand eachother a lot in the past 4 months huh thakdu 😭🤭🙃💟</p>
+
+      <p class="paragraph reveal-p">I know we are still learning bae. We don't understand eachother perfectly everytime and sometimes we will get things worng(most of the times it's me ofc 😗🙂💔🙏). But i hope we keep talking honestly, listen to eachother, apologise when we need to and learn to care for eachother better than ever😋💟. I don't want us to be perfect. I want us to grow Together understanding eachother better than last time darling 😝💘.</p>
+
+      <p class="paragraph reveal-p">And ofc how can I forget this on our every aniversary😋. Thank you for being a part of my life babyy 😭♾️. For the laughs, for the affection, for all the little things we have shared soo far 😭✨. I hope we get to make many more memories, cheer eachother on and keep and keep finding reasons to smile Togother 😝💋. And ofc darling 😭 i am soo grateful that we can be ourselves with eachother in this relationship, being enough for eachother in this relationship and grow Togother😭💋. I want to spend all the coming days with you. To grow beside you and ofc to make all the beautiful memories with ma thakdu 😭😝💋. U have been such a blessing babyy(ngl fr yawrr)😭🛐 and for nowww 😭🛐 I am really really happy that's it's you whose ma wifey 😭🛐💐💖. I will always be grateful and happiest for that even If its 4 months, 4 years or even a century 😭🤭💘💟. In every single life I hope I fall in love with those same eyes that made me realise how beautiful life can be😭💋the kid me would be soo happy if he knew i have someone like you to take care of me 😭. I love you so much baeee 😭🛐💐. Till my last breath and last thought 😭🛐it will always be you 😭💋</p>
+
+      <div class="signature reveal-p">With all my love,<br>Your kezhangan 😭💋💗<br>Your husband 💗<br>Your bestfriend 🫂<br>Your kannan 😭💋💗<br><small>The one who is very much stuck on you</small></div>
+
+    <div class="end-card">
+      <div class="big-heart" aria-hidden="true">💗</div>
+      <h2 class="end-title">And one last little thing…</h2>
+      <p class="end-note">Because obviously, one letter wasn't enough for this dramatic idiot. 😭</p>
+      <button class="surprise-btn" id="showFinale">tap for your final surprise, wifeyyy ♡</button>
+      <div id="finale"><span class="final-burst">🌸🦋💐💗🦋🌸</span><strong style="font-size:clamp(1.8rem,7vw,2.6rem);color:#843e4f;display:block;line-height:1.2;margin-bottom:12px">HAPPY FOUR MONTHS TO US,<br>DARLINGGG!!! 😭🛐💗</strong>So here's to four months of us, babyy. Thank you for being you, and for sharing this little chapter with me. Keep the smiles, keep the mwahhh's, and maybe keep this kezhangan too. 😭🌸🍫 I LOVEE YOUH MOREEE BABYYY. 💐💗<div class="final-burst" style="margin-top:12px">🌷🌺🌸🦋🌸🌺🌷</div></div>
+    </div>
+  </section>
+  <footer>made with lots of love, just for you ♡</footer>
+</main>
+<script>
+(function(){
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const petalRoot = document.getElementById('petals');
+  const symbols = ['♡','♥','✿','❀','🦋','🌸','🌷','🤍'];
+  for(let i=0;i<18;i++){
+    const p=document.createElement('span');
+    p.className='petal';
+    p.textContent=symbols[i%symbols.length];
+    p.style.left=(Math.random()*100)+'%';
+    p.style.setProperty('--drift',((Math.random()*140)-70)+'px');
+    p.style.animationDuration=(reduced?20:(10+Math.random()*13))+'s';
+    p.style.animationDelay=(-Math.random()*20)+'s';
+    p.style.fontSize=(symbols[i%symbols.length]==='🦋'||symbols[i%symbols.length]==='🌷'||symbols[i%symbols.length]==='🌸'?14+Math.random()*10:12+Math.random()*14)+'px';
+    petalRoot.appendChild(p);
+  }
+  const openBtn=document.getElementById('openLetter');
+  const letter=document.getElementById('letter');
+  openBtn.addEventListener('click',()=>{
+    if(openBtn.classList.contains('open')) return;
+    openBtn.classList.add('open');
+    openBtn.setAttribute('aria-expanded','true');
+    openBtn.querySelector('.tap-hint').textContent='your letter is opening… ♡';
+    window.setTimeout(()=>{
+      letter.classList.add('visible');
+      openBtn.querySelector('.tap-hint').textContent='a letter, just for you ♡';
+      const paragraphs=[...document.querySelectorAll('.reveal-p')];
+      if('IntersectionObserver' in window && !reduced){
+        const observer=new IntersectionObserver(entries=>{
+          entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('shown');observer.unobserve(entry.target)}});
+        },{threshold:.12});
+        paragraphs.forEach(p=>observer.observe(p));
+      }else{paragraphs.forEach(p=>p.classList.add('shown'))}
+      letter.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+    },reduced?0:850);
+  });
+  document.getElementById('showFinale').addEventListener('click',function(){
+    const finale=document.getElementById('finale');
+    finale.classList.toggle('visible');
+    this.textContent=finale.classList.contains('visible')?'hide my tiny note ♡':'tap for one last note ♡';
+    if(finale.classList.contains('visible')) finale.scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'});
+  });
+})();
+</script>
+</body>
+</html>
